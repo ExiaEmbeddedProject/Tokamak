@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QDesktopServices>
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QJsonObject>

@@ -54,10 +54,6 @@ void MainWindow::on_execButton_clicked()
 
     for (int i = 0; i < inFiles.size(); i++)
     {
-        QMessageBox msgBox;
-        msgBox.setText(this->inDirPath + "/" + inFiles.at(i));
-        msgBox.exec();
-
         QFile file(this->inDirPath + "/" + inFiles.at(i));
 
         if(!file.open(QIODevice::ReadOnly))
@@ -105,6 +101,8 @@ void MainWindow::on_execButton_clicked()
     outStream << doc.toJson() << endl;
 
     outFile.close();
+
+    QDesktopServices::openUrl(this->outDirPath);
 }
 
 
