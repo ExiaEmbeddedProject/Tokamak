@@ -71,7 +71,8 @@ void MainWindow::on_execButton_clicked()
         file.close();
 
         QJsonDocument json = QJsonDocument::fromJson(line.toUtf8());
-        QJsonArray jsonArray = json.array();
+        QJsonObject obj = json.object();
+        QJsonArray jsonArray = obj["DATA"].toArray();
 
         for (int h = 0; h < jsonArray.size(); h++)
         {
@@ -95,7 +96,11 @@ void MainWindow::on_execButton_clicked()
         return;
     }
 
-    QJsonDocument doc = QJsonDocument(jsonEntries);
+    QJsonObject obj
+    {
+        {"DATA", jsonEntries}
+    };
+    QJsonDocument doc = QJsonDocument(obj);
     QTextStream outStream(&outFile);
     outStream << doc.toJson() << endl;
 

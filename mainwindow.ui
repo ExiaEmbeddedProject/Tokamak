@@ -26,6 +26,9 @@
     <property name="readOnly">
      <bool>false</bool>
     </property>
+    <property name="placeholderText">
+     <string>Input folder</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="browseInButton">
     <property name="geometry">
@@ -51,6 +54,9 @@
     </property>
     <property name="readOnly">
      <bool>false</bool>
+    </property>
+    <property name="placeholderText">
+     <string>Output folder</string>
     </property>
    </widget>
    <widget class="QPushButton" name="browseOutButton">
